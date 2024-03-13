@@ -4,7 +4,7 @@ const keys = require("./keys");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const port = process.env.PORT || 3001
+// const port = process.env.PORT || 3001
 
 const app = express();
 app.use(cors());
