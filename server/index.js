@@ -46,6 +46,7 @@ pgClient.on("connect", client => {
 //Express route definitions
 app.get("/", (req, res) => {
   res.send("John server");
+  res.send({ message: 'Server is up and running!' });
 });
 
 app.put("/values/:id", async (req, res) => {

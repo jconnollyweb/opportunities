@@ -27,6 +27,7 @@ function OpenRoles() {
   const [selectedRoles, setSelectedRoles] = useState([]);
   const [ selectedGrades, setSelectedGrades ] = useState([])
   const [ showFilter, setShowFilter ] = useState(false)
+  const [serverStatus, setServerStatus] = useState('');
   
   useEffect(() => {
     const fetchData = async () => {
@@ -47,6 +48,15 @@ function OpenRoles() {
         console.error("Error fetching values:", error);
       }
     };
+
+    axios.get("https://opportunities-server.onrender.com" + "/")
+    .then(response => {
+      setServerStatus(response.data.message);
+    })
+    .catch(error => {
+      setServerStatus('Failed to connect to the server.');
+      console.error('Error connecting to server:', error);
+    });
 
     fetchData();
   }, []);
@@ -121,6 +131,10 @@ function OpenRoles() {
                 <div className="forecast">
                   <h4>Sales Forecast</h4>
                   <h3>{value.forecast}</h3>
+                </div>
+                <div>
+                  <h1>Server Status:</h1>
+                  <p>{serverStatus}</p>
                 </div>
 
                 
