@@ -31,7 +31,7 @@ function OpenRoles() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("api/values/all");
+        const response = await axios.get("https://opportunities-server.onrender.com" + "api/values/all");
         const data = response.data;
         setValues(data);
         const allRoles = Array.from(
