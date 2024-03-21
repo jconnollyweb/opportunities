@@ -6,4 +6,6 @@ module.exports = {
   pgPort: process.env.PGPORT
 };
 
+console.log("PGUSER:", process.env.PGUSER);
+console.log("PGHOST:", process.env.PGHOST);
 

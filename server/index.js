@@ -20,8 +20,7 @@ const pgClient = new Pool({
   port: keys.pgPort
 });
 
-console.log("PGUSER:", process.env.PGUSER);
-console.log("PGHOST:", process.env.PGHOST);
+
 
 pgClient.on("connect", client => {
   client
