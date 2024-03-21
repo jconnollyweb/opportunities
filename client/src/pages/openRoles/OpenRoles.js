@@ -52,6 +52,7 @@ function OpenRoles() {
     axios.get("https://opportunities-server.onrender.com" + "/")
     .then(response => {
       setServerStatus(response.data.message);
+      console.log('Response Status:', response.status);
       console.log('yes')
     })
     .catch(error => {
