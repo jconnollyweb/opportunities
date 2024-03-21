@@ -91,6 +91,7 @@ app.get("/values/all", async (req, res) => {
   } catch (error) {
     console.error("Error fetching values:", error);
     res.status(500).json({ error: "Failed to fetch values from the database." });
+    console.log('values', values)
   }
 });
 
