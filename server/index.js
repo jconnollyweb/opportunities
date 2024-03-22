@@ -118,6 +118,38 @@ sequelize
     }
   });
 
+  app.get("/values/:id", async (req, res) => {
+    const { id } = req.params;
+    try {
+      const value = await post.findByPk(id); // Find a value by its primary key (id)
+      if (!value) {
+        return res.status(404).json({ error: 'Value not found' });
+      }
+      // Map the retrieved value to match the desired response format
+      const jsonData = {
+        id: value.id,
+        account: value.account,
+        sector: value.sector, 
+        engagement: value.engagement,
+        startdate: value.startdate,
+        enddate: value.enddate,
+        channel: value.channel,
+        owner: value.owner,
+        originator: value.originator,
+        role: value.role,
+        location: value.location,
+        revenue: value.revenue,
+        forecast: value.forecast,
+        notes: value.notes,
+        grade: value.grade,
+      };
+      res.json(jsonData);
+    } catch (error) {
+      console.error('Error:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+
 
 // // const keys = require("./keys");
 
@@ -128,7 +160,7 @@ sequelize
 // // const port = process.env.PORT || 3001
 
 // const app = express();
-app.use(cors());
+// app.use(cors());
 // app.use(bodyParser.json());
 
 // // Postgres client setup
