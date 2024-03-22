@@ -45,7 +45,7 @@ sequelize
       allowNull: false,
     },
     sector: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
     },
     engagement: {
@@ -61,7 +61,7 @@ sequelize
       allowNull: false,
     },
     channel: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
     },
     owner: {
@@ -73,7 +73,7 @@ sequelize
       allowNull: false,
     },
     role: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
     },
     location: {
@@ -93,7 +93,7 @@ sequelize
       allowNull: false,
     },
     grade: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
     },
   });
