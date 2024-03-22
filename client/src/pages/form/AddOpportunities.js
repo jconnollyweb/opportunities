@@ -26,7 +26,7 @@ const AddOpportunities = () => {
   const saveInfo = useCallback(
     async event => {
       event.preventDefault();
-      await axios.post("https://opportunities-server.onrender.com" + "/api/values", {
+      await axios.post("https://opportunities-server.onrender.com" + "/values", {
         account,
         sector: selectedSector,
         engagement, 
