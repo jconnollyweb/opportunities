@@ -85,7 +85,7 @@ sequelize
       allowNull: false,
     },
     forecast: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
     },
     notes: {
