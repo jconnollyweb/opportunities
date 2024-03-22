@@ -135,10 +135,7 @@ function OpenRoles() {
                   <h4>Sales Forecast</h4>
                   <h3>{value.forecast}</h3>
                 </div>
-                <div>
-                  <h1>Server Status:</h1>
-                  <p>{serverStatus}</p>
-                </div>
+                
 
                 
                 
