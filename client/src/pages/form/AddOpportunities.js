@@ -35,7 +35,7 @@ const AddOpportunities = () => {
         channel: selectedChannel,
         owner,
         originator,
-        role: selectedRole.join(','),
+        role: selectedRole,
         location,
         revenue,
         forecast: selectedForecast,
