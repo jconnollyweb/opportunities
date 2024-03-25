@@ -55,9 +55,32 @@ return (
         <div className="left"> 
           <p>Account: {values.account}</p>
           <p>Engagement: {values.engagement}</p>
-          {/* Render other properties here */}
+          <p>Role: {values.role[0]} <br />{value.role[1]} <br /> {value.role[2]}<br /> {value.role[3]} </p>           <p>Start Date: {formatDate(value.startdate)} </p>
+          <p>Owner: {values.owner} </p>
+           <p>Revenue: £{values.revenue}</p>
+           <p>Notes: {values.notes} </p>
         </div>
-        {/* Additional rendering */}
+
+        <div className="right"> 
+            <p>Sector: {values.sector}</p>
+            <p>Location: {values.location}</p>            <p>Sales Channel: {value.channel} </p>
+            <p>End Date: {formatDate(value.enddate)} </p>
+            <p>Originator: {values.originator} </p>
+            <p>Grades Wanted: {values.grade[0]}  {value.grade[1]}  {value.grade[2]}  {value.grade[3]} </p>
+            <p>Sales Forecast: {values.forecast}</p>
+
+         </div>
+         {authenticated && (
+        <button className="edit-btn" onClick={toggleEdit}>Edit</button> )}
+         {isEditing && authenticated && (
+           <EditRole 
+           id={id}
+          selectedForecast={selectedForecast}
+           setSelectedForecast={setSelectedForecast}
+          onClose={toggleEdit}
+          />
+        )}
+        
       </div>
     ) : (
       <p>No values found</p>
