@@ -19,16 +19,34 @@ function RoleDetails() {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get(`https://opportunities-server.onrender.com/values/${id}`)
-          setValues(response.data)
-          console.log('resdate', response.data)
-          console.log('values', values)
+          const response = await axios.get(`https://opportunities-server.onrender.com/values/${id}`);
+          const responseData = response.data;
+    
+          // Check if values.role is a string before parsing it
+          if (typeof responseData.role === 'string') {
+            responseData.role = JSON.parse(responseData.role);
+          }
+    
+          setValues(responseData);
         } catch (error) {
-          console.error('error', error)
+          console.error('error', error);
         }
-      }
-      fetchData()
-    }, [id])
+      };
+    
+      fetchData();
+    }, [id]);
+    //   const fetchData = async () => {
+    //     try {
+    //       const response = await axios.get(`https://opportunities-server.onrender.com/values/${id}`)
+    //       setValues(response.data)
+    //       console.log('resdate', response.data)
+    //       console.log('values', values)
+    //     } catch (error) {
+    //       console.error('error', error)
+    //     }
+    //   }
+    //   fetchData()
+    // }, [id])
 
     if(!values) {
       return <p> Loading ...</p>
