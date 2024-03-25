@@ -149,7 +149,7 @@ sequelize
         channel: value.channel,
         owner: value.owner,
         originator: value.originator,
-        role: rolesData,
+        role: roleData,
         location: value.location,
         revenue: value.revenue,
         forecast: value.forecast,
