@@ -14,6 +14,7 @@ function RoleDetails() {
     const [values, setValues] = useState()
     const [selectedForecast, setSelectedForecast] = useState([]);
     const [isEditing, setIsEditing ] = useState(false)
+    console.log('values1', values)
 
     useEffect(() => {
       const fetchData = async () => {
@@ -36,6 +37,8 @@ function RoleDetails() {
     const toggleEdit = () => {
       setIsEditing(!isEditing)
     }
+
+    console.log('values2', values)
 
     function formatDate(dateString) {
       const options = { year: 'numeric', month: '2-digit', day: '2-digit'}
