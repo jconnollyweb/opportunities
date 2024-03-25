@@ -21,6 +21,7 @@ function RoleDetails() {
           const response = await axios.get("https://opportunities-server.onrender.com" + `/values/${id}`)
           setValues(response.data)
           console.log('resdate', response.data)
+          console.log('values', values)
         } catch (error) {
           console.error('error', error)
         }
