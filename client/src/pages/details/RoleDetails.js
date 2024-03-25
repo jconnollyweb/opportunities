@@ -11,7 +11,7 @@ import './RoleDetails.css'
 function RoleDetails() {
     const { id } = useParams() 
     const { authenticated } = useAuth()
-    const [values, setValues] = useState()
+    const [values, setValues] = useState([])
     const [selectedForecast, setSelectedForecast] = useState([]);
     const [isEditing, setIsEditing ] = useState(false)
     console.log('values1', values)
