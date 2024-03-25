@@ -108,6 +108,8 @@ sequelize
     }
   });
 
+  
+
   app.get("/values/all", async (req, res) => {
     try {
       const allPosts = await post.findAll();
@@ -125,17 +127,6 @@ sequelize
       if (!value) {
         return res.status(404).json({ error: 'Value not found' });
       }
-
-      let roleData = value.role;
-      if (typeof roleData === 'string') {
-        try {
-          roleData = JSON.parse(roleData);
-        } catch (error) {
-          console.error('Error parsing role data:', error);
-          return res.status(500).json({ error: 'Error parsing role data' });
-        }
-      }
-      
       // Map the retrieved value to match the desired response format
       const jsonData = {
         id: value.id,
@@ -147,7 +138,7 @@ sequelize
         channel: value.channel,
         owner: value.owner,
         originator: value.originator,
-        role: roleData,
+        role: value.role,
         location: value.location,
         revenue: value.revenue,
         forecast: value.forecast,
