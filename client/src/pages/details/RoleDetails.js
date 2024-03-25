@@ -55,7 +55,6 @@ return (
         <div className="left"> 
           <p>Account: {values.account}</p>
           <p>Engagement: {values.engagement}</p>
-          {/* <p>Role: {values.role[0]} <br />{values.role[1]} <br /> {values.role[2]}<br /> {values.role[3]} </p>            */}
           <p>Start Date: {formatDate(values.startdate)} </p>
           <p>Owner: {values.owner} </p>
            <p>Revenue: £{values.revenue}</p>
@@ -68,7 +67,6 @@ return (
             <p>Sales Channel: {values.channel} </p>
             <p>End Date: {formatDate(values.enddate)} </p>
             <p>Originator: {values.originator} </p>
-            {/* <p>Grades Wanted: {values.grade[0]}  {values.grade[1]}  {values.grade[2]}  {values.grade[3]} </p> */}
             <p>Sales Forecast: {values.forecast}</p>
 
          </div>
