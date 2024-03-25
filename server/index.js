@@ -125,6 +125,10 @@ sequelize
       if (!value) {
         return res.status(404).json({ error: 'Value not found' });
       }
+      let sanitizedRoleData = value.role;
+      if (typeof sanitizedRoleData === 'string') {
+        sanitizedRoleData = sanitizedRoleData.replace(/\\/g, '');
+      }
       // Map the retrieved value to match the desired response format
       const jsonData = {
         id: value.id,
@@ -136,7 +140,7 @@ sequelize
         channel: value.channel,
         owner: value.owner,
         originator: value.originator,
-        role: value.role,
+        role: JSON.parse(sanitizedRoleData),
         location: value.location,
         revenue: value.revenue,
         forecast: value.forecast,
