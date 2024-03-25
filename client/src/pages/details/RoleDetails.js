@@ -19,7 +19,7 @@ function RoleDetails() {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get("https://opportunities-server.onrender.com" + `/values/${id}`)
+          const response = await axios.get(`https://opportunities-server.onrender.com/values/${id}`)
           setValues(response.data)
           console.log('resdate', response.data)
           console.log('values', values)
