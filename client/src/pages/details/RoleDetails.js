@@ -19,34 +19,16 @@ function RoleDetails() {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get(`https://opportunities-server.onrender.com/values/${id}`);
-          const responseData = response.data;
-    
-          // Check if values.role is a string before parsing it
-          if (typeof responseData.role === 'string') {
-            responseData.role = JSON.parse(responseData.role);
-          }
-    
-          setValues(responseData);
+          const response = await axios.get(`https://opportunities-server.onrender.com/values/${id}`)
+          setValues(response.data)
+          console.log('resdate', response.data)
+          console.log('values', values)
         } catch (error) {
-          console.error('error', error);
+          console.error('error', error)
         }
-      };
-    
-      fetchData();
-    }, [id]);
-    //   const fetchData = async () => {
-    //     try {
-    //       const response = await axios.get(`https://opportunities-server.onrender.com/values/${id}`)
-    //       setValues(response.data)
-    //       console.log('resdate', response.data)
-    //       console.log('values', values)
-    //     } catch (error) {
-    //       console.error('error', error)
-    //     }
-    //   }
-    //   fetchData()
-    // }, [id])
+      }
+      fetchData()
+    }, [id])
 
     if(!values) {
       return <p> Loading ...</p>
@@ -73,9 +55,8 @@ return (
         <div className="left"> 
           <p>Account: {values.account}</p>
           <p>Engagement: {values.engagement}</p>
-          {values.role && (
-          <p>Role: {JSON.parse(values.role).map((role, index) => <span key={index}>{role}<br /></span>)}</p>
-        )}
+          {/* <p>Role: {values.role.map((role, index) => <span key={index}>{role}<br /></span>)}</p> */}
+
           <p>Start Date: {formatDate(values.startdate)} </p>
           <p>Owner: {values.owner} </p>
            <p>Revenue: £{values.revenue}</p>
@@ -86,8 +67,8 @@ return (
             <p>Sector: {values.sector}</p>
             <p>Location: {values.location}</p>            
             <p>Sales Channel: {values.channel} </p>
-           
-            <p>End Date: {formatDate(values.enddate)} </p>
+            {/* <p>Grades Wanted: {values.grade.map((grade, index) => <span key={index}>{grade}<br /></span>)}</p> */}
+             <p>End Date: {formatDate(values.enddate)} </p>
             <p>Originator: {values.originator} </p>
             <p>Sales Forecast: {values.forecast}</p>
 
