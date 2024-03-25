@@ -125,8 +125,20 @@ sequelize
       if (!value) {
         return res.status(404).json({ error: 'Value not found' });
       }
+
+      let roleData = value.role;
+      // Check if roleData is a JSON string, if so, parse it
+      if (typeof roleData === 'string') {
+        try {
+          roleData = JSON.parse(roleData);
+        } catch (error) {
+          console.error('Error parsing role data:', error);
+          // Handle parsing error, possibly return an error response
+          return res.status(500).json({ error: 'Error parsing role data' });
+        }
+      }
+  
       // Map the retrieved value to match the desired response format
-      const rolesArray = JSON.parse(value.role)
       const jsonData = {
         id: value.id,
         account: value.account,
@@ -137,7 +149,7 @@ sequelize
         channel: value.channel,
         owner: value.owner,
         originator: value.originator,
-        role: rolesArray,
+        role: rolesData,
         location: value.location,
         revenue: value.revenue,
         forecast: value.forecast,
