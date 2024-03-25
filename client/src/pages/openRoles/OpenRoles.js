@@ -28,6 +28,7 @@ function OpenRoles() {
   const [ selectedGrades, setSelectedGrades ] = useState([])
   const [ showFilter, setShowFilter ] = useState(false)
   const [serverStatus, setServerStatus] = useState('');
+  console.log('values or', values)
   
   useEffect(() => {
     const fetchData = async () => {
@@ -39,6 +40,7 @@ function OpenRoles() {
           new Set(data.flatMap((item) => item.role))
         );
         setRoles(allRoles);
+        console.log('values or', values)
 
         const allGrades = Array.from(
           new Set(data.flatMap((item) => item.grade))
