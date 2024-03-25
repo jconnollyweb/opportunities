@@ -126,6 +126,7 @@ sequelize
         return res.status(404).json({ error: 'Value not found' });
       }
       // Map the retrieved value to match the desired response format
+      const rolesArray = JSON.parse(value.role)
       const jsonData = {
         id: value.id,
         account: value.account,
@@ -136,7 +137,7 @@ sequelize
         channel: value.channel,
         owner: value.owner,
         originator: value.originator,
-        role: value.role,
+        role: rolesArray,
         location: value.location,
         revenue: value.revenue,
         forecast: value.forecast,
