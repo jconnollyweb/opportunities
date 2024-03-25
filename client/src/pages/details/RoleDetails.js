@@ -45,7 +45,6 @@ function RoleDetails() {
       const formattedDate = new Date(dateString).toLocaleDateString('en-GB', options)
       return formattedDate
     }
-
     
  
 return (
@@ -56,7 +55,7 @@ return (
         <div className="left"> 
           <p>Account: {values.account}</p>
           <p>Engagement: {values.engagement}</p>
-          <p>Role: {Array.isArray(values.role) && values.role.map((role, index) => <span key={index}>{role}<br /></span>)}</p>
+          <p>Role: {values.role}</p>
 
           <p>Start Date: {formatDate(values.startdate)} </p>
           <p>Owner: {values.owner} </p>
