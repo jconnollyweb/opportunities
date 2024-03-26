@@ -108,7 +108,7 @@ sequelize
     }
   });
 
-  
+  // test database
 
   app.get("/values/all", async (req, res) => {
     try {
