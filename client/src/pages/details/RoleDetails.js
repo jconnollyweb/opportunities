@@ -55,8 +55,8 @@ return (
         <div className="left"> 
           <p>Account: {values.account}</p>
           <p>Engagement: {values.engagement}</p>
-          <p>Role: {JSON.parse(values.role).map((role, index) => <span key={index}>{role}<br /></span>)}</p>
-
+          {values.role && (
+          <p>Role: {JSON.parse(values.role.replace(/"/g, '"').replace(/{/g, '[').replace(/}/g, ']')).map((role, index) => <span key={index}>{role}<br /></span>)}</p>)}
           <p>Start Date: {formatDate(values.startdate)} </p>
           <p>Owner: {values.owner} </p>
           <p>Revenue: £{values.revenue}</p>
