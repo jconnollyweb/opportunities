@@ -73,7 +73,9 @@ return (
             <p>Grades Wanted: {JSON.parse(values.grade.replace(/"/g, '"').replace(/{/g, '[').replace(/}/g, ']')).map((grade, index) => <span key={index}>{grade}<br /></span>)}</p>)}
              <p>End Date: {formatDate(values.enddate)} </p>
             <p>Originator: {values.originator} </p>
-            
+            {values.forecast && (
+            <p>Sales Forecast: {JSON.parse(values.forecast.replace(/"/g, '"').replace(/{/g, '[').replace(/}/g, ']')).map((forecast, index) => <span key={index}>{forecast}<br /></span>)}</p>)}
+           
 
          </div>
           {authenticated && (
