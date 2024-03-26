@@ -67,7 +67,8 @@ return (
             <p>Sector: {values.sector}</p>
             <p>Location: {values.location}</p>            
             <p>Sales Channel: {values.channel} </p>
-            <p>Grades Wanted: {JSON.parse(values.grade.replace(/"/g, '"').replace(/{/g, '[').replace(/}/g, ']')).map((grade, index) => <span key={index}>{grade}<br /></span>)}</p>
+            {values.grade && (
+            <p>Grades Wanted: {JSON.parse(values.grade.replace(/"/g, '"').replace(/{/g, '[').replace(/}/g, ']')).map((grade, index) => <span key={index}>{grade}<br /></span>)}</p>)}
              <p>End Date: {formatDate(values.enddate)} </p>
             <p>Originator: {values.originator} </p>
             <p>Sales Forecast: {values.forecast}</p>
