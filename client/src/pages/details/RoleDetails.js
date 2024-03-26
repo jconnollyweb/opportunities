@@ -64,14 +64,17 @@ return (
         </div>
 
         <div className="right"> 
-            <p>Sector: {values.sector}</p>
+            {values.sector && (
+            <p>Sector: {JSON.parse(values.sector.replace(/"/g, '"').replace(/{/g, '[').replace(/}/g, ']')).map((sector, index) => <span key={index}>{sector}<br /></span>)}</p>)}
             <p>Location: {values.location}</p>            
-            <p>Sales Channel: {values.channel} </p>
+            {values.channel && (
+            <p>Sales Channel: {JSON.parse(values.channel.replace(/"/g, '"').replace(/{/g, '[').replace(/}/g, ']')).map((channel, index) => <span key={index}>{channel}<br /></span>)}</p>)}
             {values.grade && (
             <p>Grades Wanted: {JSON.parse(values.grade.replace(/"/g, '"').replace(/{/g, '[').replace(/}/g, ']')).map((grade, index) => <span key={index}>{grade}<br /></span>)}</p>)}
              <p>End Date: {formatDate(values.enddate)} </p>
             <p>Originator: {values.originator} </p>
-            <p>Sales Forecast: {values.forecast}</p>
+            {values.forecast && (
+          <p>Sales Forecast: {JSON.parse(values.forcast.replace(/"/g, '"').replace(/{/g, '[').replace(/}/g, ']')).map((forecast, index) => <span key={index}>{forecast}<br /></span>)}</p>)}
 
          </div>
           {authenticated && (
