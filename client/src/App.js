@@ -19,7 +19,7 @@ function App() {
           <Route exact path="/" element={ <OpenRoles />} />
           <Route path="/otherpage" element={< AddOpportunities />} />
           <Route path="/:id" element={ <RoleDetails /> } />
-          <Route path="/:id?" element={ <EditRole /> } />
+          <Route path="/:id" element={ <EditRole /> } />
           {/* <Route path="/gridpage" element={<GridPage /> } /> */}
           <Route path="/login" element={<LoginPage />} />
           </Routes>
