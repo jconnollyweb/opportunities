@@ -18,7 +18,7 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose}) {
 
   const handleSaveForecast = async () => {
     try {
-      const response = await axios.put("https://opportunities-server.onrender.com" + `/values/${id}`, {
+      const response = await axios.put(`https://opportunities-server.onrender.com/values/${id}`, {
         forecast: selectedForecast,
       });
       setSuccessMessage("Forecast updated successfully")
