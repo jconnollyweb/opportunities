@@ -108,27 +108,7 @@ sequelize
     }
   });
 
-  app.put("/values/:id", async (req, res) => {
-    const { id } = req.params;
-    const { forecast } = req.body;
-  
-    try {
-      // Find the value by its id
-      const value = await post.findByPk(id);
-      if (!value) {
-        return res.status(404).json({ error: 'Value not found' });
-      }
-  
-      // Update the forecast value
-      value.forecast = forecast;
-      await value.save();
-  
-      res.json({ success: true });
-    } catch (error) {
-      console.error("Error updating forecast:", error);
-      res.status(500).json({ error: "Failed to update forecast in the database." });
-    }
-  });
+
 
   app.get("/values/all", async (req, res) => {
     try {
@@ -169,6 +149,28 @@ sequelize
     } catch (error) {
       console.error('Error:', error);
       res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+
+  app.put("/values/:id", async (req, res) => {
+    const { id } = req.params;
+    const { forecast } = req.body;
+  
+    try {
+      // Find the value by its id
+      const value = await post.findByPk(id);
+      if (!value) {
+        return res.status(404).json({ error: 'Value not found' });
+      }
+  
+      // Update the forecast value
+      value.forecast = forecast;
+      await value.save();
+  
+      res.json({ success: true });
+    } catch (error) {
+      console.error("Error updating forecast:", error);
+      res.status(500).json({ error: "Failed to update forecast in the database." });
     }
   });
 
