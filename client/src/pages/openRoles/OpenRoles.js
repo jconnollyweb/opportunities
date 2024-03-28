@@ -67,9 +67,9 @@ function OpenRoles() {
   }, []);
 
   const filteredValues = values.filter((value) =>
-    (selectedRoles.length === 0 || value.role.some((role) => selectedRoles.includes(role))) &&
-    (selectedGrades.length === 0 || value.grade.some((grade) => selectedGrades.includes(grade)))
-  );
+  (selectedRoles.length === 0 || value.role.some((role) => selectedRoles.includes(role))) &&
+  (selectedGrades.length === 0 || JSON.parse(value.grade).some((grade) => selectedGrades.includes(grade)))
+);
 
   const handleRoleChange = (selectedRoles) => {
     setSelectedRoles(selectedRoles);
