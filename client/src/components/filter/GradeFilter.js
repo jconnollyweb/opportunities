@@ -24,20 +24,21 @@ function GradeFilter({ grades, onFilterChange }) {
 
   return (
     <div className="grade-filter-body">
-    <h2>Filter by Grade</h2>
-    {JSON.parse(grades).map((grade, index) => (
-      <label className="filter-label" key={index}>
-        <input
-          type="checkbox"
-          value={grade}
-          checked={selectedGrades.includes(grade)}
-          onChange={handleGradeChange}
-        />
-        {grade}
-        <br />
-      </label>
-    ))}
-  </div>
+      <h2>Filter by Grade</h2>
+      {grades.map((grade) => (
+        <label className="filter-label" key={grade}>
+          <input
+            type="checkbox"
+            value={grade}
+            checked={selectedGrades.includes(grade)}
+            onChange={handleGradeChange}
+          />
+          {grade}
+          <br />
+        </label>
+      ))}
+    
+    </div>
   );
 }
 
