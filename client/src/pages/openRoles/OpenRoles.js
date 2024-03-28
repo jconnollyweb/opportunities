@@ -71,6 +71,13 @@ function OpenRoles() {
   (selectedGrades.length === 0 || JSON.parse(value.grade).some((grade) => selectedGrades.includes(grade)))
 );
 
+const parseGrade = (gradeString) => {
+  // Remove surrounding double quotes and curly braces
+  const cleanedString = gradeString.replace(/"{|}"/g, '');
+  // Split the cleaned string by comma and trim each value
+  return cleanedString.split(',').map((grade) => grade.trim());
+};
+
   const handleRoleChange = (selectedRoles) => {
     setSelectedRoles(selectedRoles);
   };
