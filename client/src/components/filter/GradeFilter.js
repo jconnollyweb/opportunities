@@ -22,10 +22,20 @@ function GradeFilter({ grades, onFilterChange }) {
     onFilterChange(selectedGrades);
   }, [selectedGrades, onFilterChange]);
 
+  const parseGrades = (gradeString) => {
+    try {
+      return JSON.parse(gradeString.replace(/"/g, '"').replace(/{/g, '[').replace(/}/g, ']'));
+    } catch (error) {
+      console.error("Error parsing grades:", error);
+      return [];
+    }
+  };
+
+
   return (
     <div className="grade-filter-body">
       <h2>Filter by Grade</h2>
-      {grades.map((grade) => (
+      {parseGrades(grades).map((grade) => (
         <label className="filter-label" key={grade}>
           <input
             type="checkbox"
