@@ -22,6 +22,12 @@ function GradeFilter({ grades, onFilterChange }) {
     onFilterChange(selectedGrades);
   }, [selectedGrades, onFilterChange]);
 
+  const renderGrade = (grade) => {
+    // Remove quotes and brackets from the grade
+    return grade.replace(/["{}]/g, '');
+  };
+
+
   return (
     <div className="grade-filter-body">
       <h2>Filter by Grade</h2>
@@ -33,7 +39,7 @@ function GradeFilter({ grades, onFilterChange }) {
             checked={selectedGrades.includes(grade)}
             onChange={handleGradeChange}
           />
-          {grade}
+          {renderGrade(grade)}
           <br />
         </label>
       ))}
