@@ -67,16 +67,9 @@ function OpenRoles() {
   }, []);
 
   const filteredValues = values.filter((value) =>
-  (selectedRoles.length === 0 || value.role.some((role) => selectedRoles.includes(role))) &&
-  (selectedGrades.length === 0 || parseGrade(value.grade).some((grade) => selectedGrades.includes(grade)))
-);
-
-const parseGrade = (gradeString) => {
-  // Remove surrounding double quotes and curly braces
-  const cleanedString = gradeString.replace(/"{|}"/g, '');
-  // Split the cleaned string by comma and trim each value
-  return cleanedString.split(',').map((grade) => grade.trim());
-};
+    (selectedRoles.length === 0 || value.role.some((role) => selectedRoles.includes(role))) &&
+    (selectedGrades.length === 0 || value.grade.some((grade) => selectedGrades.includes(grade)))
+  );
 
   const handleRoleChange = (selectedRoles) => {
     setSelectedRoles(selectedRoles);
