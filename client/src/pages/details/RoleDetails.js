@@ -63,7 +63,7 @@ return (
         </div>
 
         <div className="right"> 
-             <p>Sectors: {values.sector} </p>
+            <p>Sector: {values.sector} </p>
             <p>Location: {values.location}</p>            
             <p>Sales Channel: {values.channel} </p>
             <p>Grade: {values.grade} </p>
