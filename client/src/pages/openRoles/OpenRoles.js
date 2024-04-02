@@ -135,8 +135,7 @@ function OpenRoles() {
                 </div>
                 <div className="forecast">
                   <h4>Sales Forecast</h4>
-                  {value.forecast && (
-                  <h3> {JSON.parse(value.forecast.replace(/"/g, '"').replace(/{/g, '[').replace(/}/g, ']')).map((forecast, index) => <span key={index}>{forecast}<br /></span>)}</h3>)}
+                  <h3> {value.forecast}</h3>
                 </div>
                 
 
