@@ -27,11 +27,13 @@ function OpenRoles() {
   const [selectedRoles, setSelectedRoles] = useState([]);
   const [ selectedGrades, setSelectedGrades ] = useState([])
   const [ showFilter, setShowFilter ] = useState(false)
+
+  const url = "https://opportunities-3.onrender.com"
   
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("api/values/all");
+        const response = await axios.get(url + "api/values/all");
         const data = response.data;
         setValues(data);
         const allRoles = Array.from(

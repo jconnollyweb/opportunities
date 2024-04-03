@@ -14,11 +14,12 @@ function RoleDetails() {
     const [values, setValues] = useState()
     const [selectedForecast, setSelectedForecast] = useState([]);
     const [isEditing, setIsEditing ] = useState(false)
+    const url = "https://opportunities-3.onrender.com"
 
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get(`/api/values/${id}`)
+          const response = await axios.get( url + `/api/values/${id}`)
           setValues(response.data)
           console.log('resdate', response.data)
         } catch (error) {

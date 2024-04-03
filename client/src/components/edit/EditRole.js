@@ -6,6 +6,7 @@ import './EditRole.css'
 function EditRole({ id, selectedForecast, setSelectedForecast, onClose}) {
 
   const [successMessage, setSuccessMessage ] = useState("")
+  const url = "https://opportunities-3.onrender.com"
 
   const handleForecastSelection = (event) => {
     const { value, checked } = event.target;
@@ -18,7 +19,7 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose}) {
 
   const handleSaveForecast = async () => {
     try {
-      const response = await axios.put(`/api/values/${id}`, {
+      const response = await axios.put(url + `/api/values/${id}`, {
         forecast: selectedForecast,
       });
       setSuccessMessage("Forecast updated successfully")

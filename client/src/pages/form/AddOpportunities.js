@@ -20,13 +20,14 @@ const AddOpportunities = () => {
   const [ notes, setNotes ] = useState("")
   const [ selectedGrade, setSelectedGrade ] = useState([])
   const [successMessage, setSuccessMessage ] = useState("")
+  const url = "https://opportunities-3.onrender.com"
   
 
 
   const saveInfo = useCallback(
     async event => {
       event.preventDefault();
-      await axios.post("/api/values", {
+      await axios.post(url + "/api/values", {
         account,
         sector: selectedSector,
         engagement, 
