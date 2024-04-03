@@ -28,43 +28,30 @@ function OpenRoles() {
   const [ selectedGrades, setSelectedGrades ] = useState([])
   const [ showFilter, setShowFilter ] = useState(false)
 
-  const url = "https://opportunities-3.onrender.com"
+  // const url = "https://opportunities-3.onrender.com"
   
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get(url + "api/values/all");
-  //       const data = response.data;
-  //       setValues(data);
-  //       const allRoles = Array.from(
-  //         new Set(data.flatMap((item) => item.role))
-  //       );
-  //       setRoles(allRoles);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("https://opportunities-3.onrender.com/api/values/all");
+        const data = response.data;
+        setValues(data);
+        const allRoles = Array.from(
+          new Set(data.flatMap((item) => item.role))
+        );
+        setRoles(allRoles);
 
-  //       const allGrades = Array.from(
-  //         new Set(data.flatMap((item) => item.grade))
-  //       )
-  //       setGrades(allGrades)
-  //     } catch (error) {
-  //       console.error("Error fetching values:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-    useEffect(() => {
-      async function fetchData() {
-        try {
-          const response = await axios.get("https://opportunities-3.onrender.com/api/server-status");
-          console.log(response.data);
-        } catch (error) {
-          console.error("Error fetching data:", error);
-        }
+        const allGrades = Array.from(
+          new Set(data.flatMap((item) => item.grade))
+        )
+        setGrades(allGrades)
+      } catch (error) {
+        console.error("Error fetching values:", error);
       }
-  
-      fetchData();
-    }, []);
+    };
+
+    fetchData();
+  }, []);
 
   const filteredValues = values.filter((value) =>
     (selectedRoles.length === 0 || value.role.some((role) => selectedRoles.includes(role))) &&
