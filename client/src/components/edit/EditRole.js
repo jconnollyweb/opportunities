@@ -9,7 +9,6 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose}) {
   const url = "https://opportunities-3.onrender.com"
 
   const handleForecastSelection = (event) => {
-    event.preventDefault();
     const { value, checked } = event.target;
     if (checked) {
       setSelectedForecast([...selectedForecast, value]);
@@ -18,7 +17,8 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose}) {
     }
   };
 
-  const handleSaveForecast = async () => {
+  const handleSaveForecast = async (event) => {
+    event.preventDefault();
     try {
       const response = await axios.put(url + `/values/${id}`, {
         forecast: selectedForecast,
