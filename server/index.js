@@ -11,11 +11,15 @@ app.use(bodyParser.json());
 // Postgres client setup
 const { Pool } = require("pg");
 const pgClient = new Pool({
-  user: process.env.PGUSER,
-  host: process.env.PGHOST,
-  database: process.env.PGDATABASE,
-  password: process.env.PGPASSWORD,
-  port: process.env.PGPORT
+  connectionString: process.env.DATABASE_URL, 
+  ssl: {
+    rejectUnauthorized: false 
+  }
+  // user: process.env.PGUSER,
+  // host: process.env.PGHOST,
+  // database: process.env.PGDATABASE,
+  // password: process.env.PGPASSWORD,
+  // port: process.env.PGPORT
 });
 
 pgClient.on("connect", client => {
