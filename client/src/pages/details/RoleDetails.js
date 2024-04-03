@@ -19,7 +19,7 @@ function RoleDetails() {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get( url + `/api/values/${id}`)
+          const response = await axios.get( url + `/values/${id}`)
           setValues(response.data)
           console.log('resdate', response.data)
         } catch (error) {
