@@ -19,7 +19,7 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose}) {
 
   const handleSaveForecast = async () => {
     try {
-      const response = await axios.put(url + `/api/values/${id}`, {
+      const response = await axios.put(url + `/values/${id}`, {
         forecast: selectedForecast,
       });
       setSuccessMessage("Forecast updated successfully")
