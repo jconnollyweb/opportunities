@@ -1,5 +1,3 @@
-const keys = require("./keys");
-
 // Express Application setup
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -13,11 +11,11 @@ app.use(bodyParser.json());
 // Postgres client setup
 const { Pool } = require("pg");
 const pgClient = new Pool({
-  user: keys.pgUser,
-  host: keys.pgHost,
-  database: keys.pgDatabase,
-  password: keys.pgPassword,
-  port: keys.pgPort
+  user: process.env.PGUSER,
+  host: process.env.PGHOST,
+  database: process.env.PGDATABASE,
+  password: process.env.PGPASSWORD,
+  port: process.env.PGPORT
 });
 
 pgClient.on("connect", client => {
