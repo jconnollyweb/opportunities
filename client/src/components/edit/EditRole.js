@@ -9,6 +9,7 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose}) {
   const url = "https://opportunities-3.onrender.com"
 
   const handleForecastSelection = (event) => {
+    event.preventDefault();
     const { value, checked } = event.target;
     if (checked) {
       setSelectedForecast([...selectedForecast, value]);
