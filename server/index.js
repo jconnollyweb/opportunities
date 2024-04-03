@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 // Express Application setup
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -14,7 +16,7 @@ const pgClient = new Pool({
   connectionString: process.env.DATABASE_URL, 
   ssl: {
     rejectUnauthorized: false 
-  }
+  },
   // user: process.env.PGUSER,
   // host: process.env.PGHOST,
   // database: process.env.PGDATABASE,
