@@ -46,6 +46,10 @@ app.get("/", (req, res) => {
   res.send("John server");
 });
 
+app.get("/api/server-status", (req, res) => {
+  res.send("Server is up and running!");
+});
+
 app.put("/values/:id", async (req, res) => {
   const { id } = req.params;
   const { forecast } = req.body;
