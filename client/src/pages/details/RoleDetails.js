@@ -7,7 +7,6 @@ import EditRole from "../../components/edit/EditRole";
 import { useAuth } from "../../components/authcontext/AuthContext";
 //import { API_ENDPOINT } from "./utils/utils";
 import './RoleDetails.css'
-import fetchData from "./components/EditRole"
 
 function RoleDetails() {
     const { id } = useParams() 
