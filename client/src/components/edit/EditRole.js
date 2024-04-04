@@ -3,7 +3,7 @@ import axios from "axios";
 import './EditRole.css'
 
 
-function EditRole({ id, selectedForecast, setSelectedForecast, onClose}) {
+function EditRole({ id, selectedForecast, setSelectedForecast, onClose, fetchData}) {
 
   const [successMessage, setSuccessMessage ] = useState("")
   const url = "https://opportunities-3.onrender.com"
@@ -31,22 +31,7 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose}) {
     }
   };
 
-  const fetchData = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await axios.get(url + `/values/${id}`);
-      setValues(response.data);
-      setLoading(false);
-    } catch (error) {
-      setError(error);
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, [id]);
+  
 
   return (
     <div className="edit-form">
