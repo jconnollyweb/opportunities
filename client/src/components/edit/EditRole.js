@@ -31,6 +31,23 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose}) {
     }
   };
 
+  const fetchData = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await axios.get(url + `/values/${id}`);
+      setValues(response.data);
+      setLoading(false);
+    } catch (error) {
+      setError(error);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [id]);
+
   return (
     <div className="edit-form">
       {successMessage && <div className="success-message">{successMessage}</div>}
