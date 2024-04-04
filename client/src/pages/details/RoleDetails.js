@@ -82,6 +82,7 @@ return (
             selectedForecast={selectedForecast}
             setSelectedForecast={setSelectedForecast}
             onClose={toggleEdit}
+            fetchData={fetchData}
             />
           )}
 
