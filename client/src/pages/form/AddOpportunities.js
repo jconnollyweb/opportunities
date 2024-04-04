@@ -163,7 +163,7 @@ const AddOpportunities = () => {
           
             <li>
               <label>
-                <input type="checkbox" value="commercial" checked={selectedSector.includes("commercial")}
+                <input type="checkbox" value="Commercial" checked={selectedSector.includes("commercial")}
                   onChange={handleSectorSelection}
                 />
                 Commercial
@@ -171,7 +171,7 @@ const AddOpportunities = () => {
             </li>
           <li>
             <label>
-              <input type="checkbox" value="financialServices" checked={selectedSector.includes("financialServices")}
+              <input type="checkbox" value="Financial Services" checked={selectedSector.includes("financialServices")}
                 onChange={handleSectorSelection}
               />
               Financial Services
@@ -179,7 +179,7 @@ const AddOpportunities = () => {
           </li>
           <li>
             <label>
-              <input type="checkbox" value="publicSector" checked={selectedSector.includes("publicSector")}
+              <input type="checkbox" value="Public Sector" checked={selectedSector.includes("publicSector")}
                 onChange={handleSectorSelection}
               />
               Public Sector
