@@ -25,6 +25,7 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose}) {
       });
       setSuccessMessage("Forecast updated successfully")
       console.log('Updated forecast:', response.data);
+      fetchData();
     } catch (error) {
       console.error('Error updating forecast:', error);
     }
