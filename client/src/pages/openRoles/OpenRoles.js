@@ -91,7 +91,7 @@ function OpenRoles() {
           </Link> */}
       <div className="values">
         {filteredValues.length === 0 ? (
-          <p>No values found</p>
+          <p>Please wait for server to start up (free hosting)</p>
         ) : (
           filteredValues.map((value, index) => (
             <div className="link-value" key={value.id}>
