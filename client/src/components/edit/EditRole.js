@@ -115,8 +115,8 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose, fetchDat
             </li>
            
           </ul>
-          <button className="btn-edit" onClick={handleSaveForecast}>Save</button>
-          <button className="btn-close" onClick={onClose}>Cancel</button>
+          <button className="btn-edit" onClick={handleSaveForecast}>SAVE</button>
+          <button className="btn-close" onClick={onClose}>BACK</button>
  </form>
     </div>
   )

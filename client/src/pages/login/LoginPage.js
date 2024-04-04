@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../../components/authcontext/AuthContext";
+import './LoginPage.css'
 
 function LoginPage() {
   const [username, setUserName] = useState("")
@@ -11,11 +12,12 @@ function LoginPage() {
   }
 
 return (
-  <div>
+  <div className="login-container">
     <h2>Login</h2>
     <form>
       <label>
-        Username: 
+        Username
+        <br />
         <input
         type="text"
         value={username}
@@ -24,7 +26,8 @@ return (
       </label>
       <br />
       <label>
-        Password: 
+        Password
+        <br />
         <input
         type="text"
         value={password}
@@ -36,6 +39,7 @@ return (
           Login
       </button>
     </form>
+    <p>Username is "admin" and the Password is "1234", feel free to add or edit roles</p>
   </div>
 )
 

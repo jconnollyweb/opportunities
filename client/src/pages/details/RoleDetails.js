@@ -16,19 +16,7 @@ function RoleDetails() {
     const [isEditing, setIsEditing ] = useState(false)
     const url = "https://opportunities-3.onrender.com"
 
-    // useEffect(() => {
-    //   const fetchData = async () => {
-    //     try {
-    //       const response = await axios.get( url + `/values/${id}`)
-    //       setValues(response.data)
-    //       console.log('resdate', response.data)
-    //     } catch (error) {
-    //       console.error('error', error)
-    //     }
-    //   }
-    //   fetchData()
-    // }, [id])
-
+   
     const fetchData = async () => {
       try {
           const response = await axios.get(url + `/values/${id}`);
@@ -40,7 +28,7 @@ function RoleDetails() {
   };
 
   useEffect(() => {
-      fetchData(); // Call fetchData on component mount
+      fetchData(); 
   }, [id]);
 
     if(!values) {
@@ -89,7 +77,7 @@ return (
          </div>
 
           {authenticated && (
-         <button className="edit-btn" onClick={toggleEdit}>Edit</button> )}
+         <button id="edit-btn" onClick={toggleEdit}>Edit</button> )}
           {isEditing && authenticated && (
             <EditRole 
             id={id}

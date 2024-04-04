@@ -19,12 +19,14 @@
   padding-right: 5%;
 }
 
-.edit-btn {
+#edit-btn {
   background-color: #E55F4C;
   color: white;
   font-size: 20px;
   font-family: 'Lato', sans-serif;
   width: 50px;
+  margin-right: 3px;
+  padding-right: 60px;
 }
 
 p {

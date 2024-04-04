@@ -1,0 +1,40 @@
+
+
+.login-container {
+    background-color: #5995c9;
+    width: 60%;
+    margin: auto;
+    display: block;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+input {
+    width: 70%;
+    height: 30px;
+}
+
+button {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: orange;
+    border: orange 1px solid;
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 30px;
+    padding-top: 20px;
+}
+
+label {
+    font-size: 30px;
+}
+
+p {
+    font-size: 20px;
+    padding-bottom: 20px;
+}
