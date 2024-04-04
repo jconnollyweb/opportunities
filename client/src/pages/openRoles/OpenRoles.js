@@ -94,8 +94,8 @@ function OpenRoles() {
           <p>No values found</p>
         ) : (
           filteredValues.map((value, index) => (
-            <div className="link-value">
-              <Link to={`/${value.id}`} key={index} className="value" >
+            <div className="link-value" key={value.id}>
+              <Link to={`/${value.id}`} className="value" >
                 <div className="account">
                   <h4>Account</h4>
                   <h3>{value.account}</h3>
