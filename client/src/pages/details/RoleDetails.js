@@ -7,6 +7,7 @@ import EditRole from "../../components/edit/EditRole";
 import { useAuth } from "../../components/authcontext/AuthContext";
 //import { API_ENDPOINT } from "./utils/utils";
 import './RoleDetails.css'
+import fetchData from "./components/EditRole"
 
 function RoleDetails() {
     const { id } = useParams() 
@@ -16,18 +17,32 @@ function RoleDetails() {
     const [isEditing, setIsEditing ] = useState(false)
     const url = "https://opportunities-3.onrender.com"
 
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const response = await axios.get( url + `/values/${id}`)
-          setValues(response.data)
-          console.log('resdate', response.data)
-        } catch (error) {
-          console.error('error', error)
-        }
+    // useEffect(() => {
+    //   const fetchData = async () => {
+    //     try {
+    //       const response = await axios.get( url + `/values/${id}`)
+    //       setValues(response.data)
+    //       console.log('resdate', response.data)
+    //     } catch (error) {
+    //       console.error('error', error)
+    //     }
+    //   }
+    //   fetchData()
+    // }, [id])
+
+    const fetchData = async () => {
+      try {
+          const response = await axios.get(url + `/values/${id}`);
+          setValues(response.data);
+          console.log('resdate', response.data);
+      } catch (error) {
+          console.error('error', error);
       }
-      fetchData()
-    }, [id])
+  };
+
+  useEffect(() => {
+      fetchData(); // Call fetchData on component mount
+  }, [id]);
 
     if(!values) {
       return <p> Loading ...</p>
