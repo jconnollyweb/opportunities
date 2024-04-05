@@ -138,7 +138,7 @@ const AddOpportunities = () => {
        </div>
        <br />
        <label style={{paddingRight: "30px"}}>Owner</label>
-        <input style={{width: "61%", height: "30px"}}
+        <input style={{width: "61%", height: "30px", marginLeft: "5px"}}
           onChange={event => {
             setOwner(event.target.value)
           }}
@@ -311,7 +311,7 @@ const AddOpportunities = () => {
         <br/>
         <br />
         <label style={{paddingRight: "38px"}}>Originator</label>
-        <input style={{width: "61%", height: "30px"}}
+        <input style={{width: "61%", height: "30px", marginLeft: "8px"}}
           onChange={event => {
             setOriginator(event.target.value)
           }}

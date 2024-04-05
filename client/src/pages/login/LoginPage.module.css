@@ -1,6 +1,6 @@
 
 
-.login-container {
+.loginContainer {
     background-color: #5995c9;
     width: 60%;
     margin: auto;
@@ -10,12 +10,12 @@
     border-radius: 10px;
 }
 
-input {
+.input {
     width: 70%;
     height: 30px;
 }
 
-button {
+.button {
     margin-top: 20px;
     margin-bottom: 40px;
     padding: 10px 20px;
@@ -25,12 +25,12 @@ button {
     border-radius: 10px;
 }
 
-h2 {
+.h2 {
     font-size: 30px;
     padding-top: 20px;
 }
 
-label {
+.label {
     font-size: 30px;
 }
 

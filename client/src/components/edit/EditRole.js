@@ -49,6 +49,7 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose, fetchDat
                 />
                 Firm (100%)
               </label>
+              <br/>
               <label>
                 <input
                   type="checkbox"
@@ -58,6 +59,7 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose, fetchDat
                 />
                 Firm (100%) Working at Risk
               </label>
+              <br/>
               <label>
                 <input
                   type="checkbox"
@@ -67,6 +69,7 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose, fetchDat
                 />
                 Confident (90%)
               </label>
+              <br/>
               <label>
                 <input
                   type="checkbox"
@@ -76,6 +79,7 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose, fetchDat
                 />
                 Probable (60%)
               </label>
+              <br/>
               <label>
                 <input
                   type="checkbox"
@@ -85,6 +89,7 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose, fetchDat
                 />
                 Possible (40%)
               </label>
+              <br/>
               <label>
                 <input
                   type="checkbox"
@@ -94,6 +99,7 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose, fetchDat
                 />
                 Longshot (10%)
               </label>
+              <br/>
               <label>
                 <input
                   type="checkbox"
@@ -103,6 +109,7 @@ function EditRole({ id, selectedForecast, setSelectedForecast, onClose, fetchDat
                 />
                 Lead (1%)
               </label>
+              <br/>
               <label>
                 <input
                   type="checkbox"

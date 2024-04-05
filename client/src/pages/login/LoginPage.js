@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../../components/authcontext/AuthContext";
-import './LoginPage.css'
+import styles from './LoginPage.module.css'
 
 function LoginPage() {
   const [username, setUserName] = useState("")
@@ -12,30 +12,30 @@ function LoginPage() {
   }
 
 return (
-  <div className="login-container">
-    <h2>Login</h2>
+  <div className={styles.loginContainer}>
+    <h2 className={styles.h2}>Login</h2>
     <form>
-      <label>
+      <label className={styles.label}>
         Username
         <br />
-        <input
+        <input className={styles.input}
         type="text"
         value={username}
         onChange={(e) => setUserName(e.target.value)}
         />
       </label>
       <br />
-      <label>
+      <label className={styles.label}>
         Password
         <br />
-        <input
+        <input className={styles.input}
         type="text"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         />
       </label>
       <br />
-      <button type="button" onClick={handleLogin} >
+      <button type="button" className={styles.button} onClick={handleLogin} >
           Login
       </button>
     </form>
