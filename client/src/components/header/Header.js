@@ -25,7 +25,7 @@ function Header() {
     {authenticated ? (
       <>
       <Link to="/otherpage">Add Opportunity</Link> 
-      <button onClick={handleLogout} >Logout</button>
+      <button className="logout-btn" onClick={handleLogout} >Logout</button>
       </>
     ) : (
       <Link to="/login">Admin</Link>
