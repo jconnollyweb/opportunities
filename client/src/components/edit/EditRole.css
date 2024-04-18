@@ -38,3 +38,9 @@ li {
   border-radius: 10px;
   
 }
+
+@media only screen and (min-width: 320px) and (max-width: 430px) {
+  .success-message {
+    font-size: 10px;
+  }
+}

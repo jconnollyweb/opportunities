@@ -84,3 +84,16 @@ input.startdate {
   margin-bottom: 30px;
 
 }
+
+@media only screen and (min-width: 320px) and (max-width: 430px) {
+  h1 {
+    font-size: 20px;
+    margin-right: 20px;
+    margin-left: 70px;
+  }
+
+  label {
+    font-size: 10px;
+  }
+
+}

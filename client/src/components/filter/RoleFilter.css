@@ -28,3 +28,12 @@
   padding-left: 5%;
 }
 
+@media only screen and (min-width: 320px) and (max-width: 430px) {
+  .filter-label {
+    font-size: 10px;
+  }
+
+  .filter-body {
+    margin-left: 10px;
+  }
+}

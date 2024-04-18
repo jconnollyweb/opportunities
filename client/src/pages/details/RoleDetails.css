@@ -35,4 +35,18 @@ p {
   font-family: 'Lato', sans-serif;
 }
 
+@media only screen and (min-width: 320px) and (max-width: 430px) {
+.role-value {
+  font-size: 10px;
+  position: absolute;
+}
 
+.right p {
+  font-size: 12px;
+}
+
+.left p {
+  font-size: 12px;
+}
+
+}
