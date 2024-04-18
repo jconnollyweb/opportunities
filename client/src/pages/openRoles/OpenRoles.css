@@ -21,6 +21,7 @@
 h3 {
   color: black;
   font-family: 'Lato', sans-serif;
+  font-size: 15px;
 }
 
 h4 {
@@ -186,4 +187,33 @@ h4 {
     padding-left: 0;
     line-height: 0.1px;
 }
+}
+
+@media only screen and (min-width: 431px) and (max-width: 1400px) {
+  h3 {
+    font-size: 10px;
+  }
+
+  h4 {
+    font-size: 10px;
+    overflow-wrap: break-word;
+  }
+
+  .end-date{
+    display: none;
+  }
+
+ .start-date{
+  width: 13%;
+ }
+
+ .account{
+  width: 20%;
+  overflow-wrap: break-word;
+ }
+
+ .forecast{
+  overflow-wrap: break-word;
+  line-height: 1.5;
+ }
 }
