@@ -43,7 +43,7 @@ h4 {
 .grid-button {
   padding: 5px 10px;
   background-color: #5ca2d1;
-  font: 20px;
+  font-size: 20px;
   color: white;
   border: 1px solid #5ca2d1;
   border-radius: 10px;
