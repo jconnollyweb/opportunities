@@ -156,7 +156,7 @@
     id: 3,
     account: "Pub Chain",
     sector: "Public Sector",
-    engagement: "Data Analysis",
+    engagement: "Data Platform",
     startdate: "20/11/2023",
     enddate: "30/09/2024",
     channel: "Existing Client",
