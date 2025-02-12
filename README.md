@@ -1,2 +1,1 @@
-# Opportunities-App
-where you at
+# Opportunities
