@@ -12,7 +12,8 @@ function GridPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("api/values/all");
+        // const response = await axios.get("api/values/all");
+        const response = await axios.get("https://opportunities-3.onrender.com" + "/values/all");
         const data = response.data;
         setValues(data);
         const allRoles = Array.from(
