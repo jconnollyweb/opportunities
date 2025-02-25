@@ -5,7 +5,7 @@ import AddOpportunities from "./pages/form/AddOpportunities";
 import RoleDetails from "./pages/details/RoleDetails";
 import Header from "./components/header/Header";
 import LoginPage from "./pages/login/LoginPage";
-// import GridPage from "./pages/grid/GridPage";
+import GridPage from "./pages/grid/GridPage";
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
           <Route exact path="/" element={ <OpenRoles />} />
           <Route path="/otherpage" element={< AddOpportunities />} />
           <Route path="/:id" element={ <RoleDetails /> } />
-          {/* <Route path="/gridpage" element={<GridPage /> } /> */}
+          <Route path="/gridpage" element={<GridPage /> } />
           <Route path="/login" element={<LoginPage />} />
           </Routes>
         </div>
